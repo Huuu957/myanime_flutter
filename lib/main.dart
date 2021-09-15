@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:myanime/providers/data_provider.dart';
 import 'package:myanime/screens/anime_details_screen.dart';
-import 'package:myanime/screens/home_screen.dart';
 import 'package:provider/provider.dart';
 import 'screens/splash_screen.dart';
 

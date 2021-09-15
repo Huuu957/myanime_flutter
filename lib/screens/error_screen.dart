@@ -12,7 +12,7 @@ class ErrorScreen extends StatefulWidget {
 class _ErrorScreenState extends State<ErrorScreen> {
   Future<void> getData(String category) async {
     await Provider.of<DataProvider>(context, listen: false)
-        .getHomeData(category: category);
+        .getAnimeHomeData(category: category);
   }
 
   @override

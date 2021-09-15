@@ -16,7 +16,7 @@ class _HomePageState extends State<HomeScreen> {
 
   Future<void> getData(String category) async {
     await Provider.of<DataProvider>(context, listen: false)
-        .getHomeData(category: category);
+        .getAnimeHomeData(category: category);
   }
 
   void searchData(String query) {
@@ -29,6 +29,13 @@ class _HomePageState extends State<HomeScreen> {
       length: 2,
       child: Scaffold(
         body: FloatingSearchAppBar(
+          bottom: PreferredSize(
+            preferredSize: new Size(200.0, 50.0),
+            child: new Container(
+              width: 300.0,
+              height: 50.0,
+            ),
+          ),
           colorOnScroll: Colors.white,
           liftOnScrollElevation: 0,
           elevation: 0,
@@ -57,8 +64,12 @@ class _HomePageState extends State<HomeScreen> {
           },
           body: TabBarView(
             children: [
-              SafeArea(child: AnimeGridPage()),
-              SafeArea(child: MangaGridPage()),
+              SafeArea(
+                child: AnimeGridPage(),
+              ),
+              SafeArea(
+                child: MangaGridPage(),
+              ),
             ],
           ),
         ),

@@ -1,9 +1,10 @@
 import 'package:auto_animated/auto_animated.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:myanime/providers/manga_data_provider.dart';
+import 'package:myanime/constants/constants.dart';
 import 'package:myanime/screens/error_screen.dart';
 import 'package:myanime/widgets/home_card.dart';
+import 'package:myanime/providers/data_provider.dart';
 
 class MangaGridPage extends StatefulWidget {
   @override
@@ -18,7 +19,7 @@ class _MangaGridPageState extends State<MangaGridPage> {
   }
 
   Future<void> getData() async {
-    await Provider.of<MangaDataProvider>(context, listen: false).getHomeData();
+    await Provider.of<DataProvider>(context, listen: false).getMangaHomeData();
   }
 
   @override
@@ -27,9 +28,29 @@ class _MangaGridPageState extends State<MangaGridPage> {
     final screenHeight = device.size.height;
     final screenWidth = device.size.width;
 
-    final homeData = Provider.of<MangaDataProvider>(context);
+    final homeData = Provider.of<DataProvider>(context);
 
     return Scaffold(
+      appBar: PreferredSize(
+        preferredSize: Size(double.infinity, 30.0),
+        child: AppBar(
+          elevation: 0,
+          backgroundColor: Colors.white,
+          bottom: TabBar(
+            indicatorColor: Colors.purple,
+            tabs: [
+              Text(
+                'Anime',
+                style: kTitleTextStyle,
+              ),
+              Text(
+                'Manga',
+                style: kTitleTextStyle,
+              ),
+            ],
+          ),
+        ),
+      ),
       body: Container(
         height: screenHeight,
         width: screenWidth,

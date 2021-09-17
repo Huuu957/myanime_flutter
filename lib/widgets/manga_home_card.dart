@@ -20,7 +20,8 @@ class HomeCard extends StatelessWidget {
       onTap: () => Navigator.push(
         context,
         new MaterialPageRoute(
-          builder: (context) => new MangaDetailScreen(),
+          builder: (context) =>
+              new MangaDetailScreen(MangaDetailScreen.mangaRouteName),
         ),
       ),
       child: Column(

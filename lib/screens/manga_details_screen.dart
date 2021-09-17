@@ -9,6 +9,8 @@ import 'package:myanime/widgets/manga_details_genres.dart';
 class MangaDetailScreen extends StatefulWidget {
   static const mangaRouteName = '/mangadetailscreen';
 
+  MangaDetailScreen(String mangaRouteName);
+
   @override
   _MangaDetailScreenState createState() => _MangaDetailScreenState();
 }

@@ -259,6 +259,7 @@ class DataProvider with ChangeNotifier {
     } on DioError catch (e) {
       if (e.type == DioErrorType.response) {
         isError = true;
+
         errorMessage = 'An Error Has Occurred Please Try Again';
         notifyListeners();
         return;

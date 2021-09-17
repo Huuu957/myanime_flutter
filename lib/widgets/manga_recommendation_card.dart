@@ -16,7 +16,7 @@ class RecommendationCard extends StatelessWidget {
       clipBehavior: Clip.none,
       child: InkWell(
         onTap: () => Navigator.of(context).pushReplacementNamed(
-          MangaDetailScreen.routeName,
+          MangaDetailScreen.mangaRouteName,
           arguments: recData.malId,
         ),
         child: Column(

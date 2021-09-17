@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:myanime/providers/data_provider.dart';
 import 'package:myanime/screens/error_screen.dart';
-import 'package:myanime/widgets/home_card.dart';
+import 'package:myanime/widgets/anime_home_card.dart';
 import 'package:myanime/constants/constants.dart';
 
 class AnimeGridPage extends StatefulWidget {
